@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import background from '../../images/backgroud.jpg'
-
+import {myHost} from '../../App'
+import { Grid } from '@material-ui/core';
+import EventCard from '../EventCard/EventCard'
 const Home = () => {
+
+    const [volunteers, setVolunteers]=useState([])
+    useEffect(()=>{
+        fetch(myHost+'/show-volunteers')
+        .then(res=>res.json())
+        .then(result=>{
+            setVolunteers(result)
+        })
+    },[])
+
     return (
         <>
             <div style={{background:`linear-gradient(to bottom,
@@ -19,8 +31,21 @@ const Home = () => {
                             className='blue-button' type="submit">Search</button>
                     
                 </div>
-                
-                {/* start mapping for load data */}
+                <div className='container' style={{marginTop:'70px'}}>
+                    <Grid container item xs={12} spacing='5' justify='center'  style={{ textAlign:'center', margin:'auto'}}>
+                    {   
+                        volunteers.map(event=>{
+                            let colors=['#3F90FC','#FFBD3E','#FF7044', '#cc6fb5e0'];
+                            const random = Math.floor(Math.random()*4)
+                            return(
+                                <Grid item xs={12} sm={6} md={3} >
+                                    <EventCard event={event} myColor={colors[random]}></EventCard>
+                                </Grid>
+                            )
+                        })
+                    }
+                    </Grid>
+                </div>
             </div>
         </>
     );

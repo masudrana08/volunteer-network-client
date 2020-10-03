@@ -39,3 +39,7 @@ code {
 .input:focus{
   border:1px solid #3F90FC;
 }
+.container{
+  margin:0 10vw;
+  
+}
