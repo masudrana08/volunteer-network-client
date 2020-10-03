@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Home from './Components/Home/Home';
 import NotFound from './Components/NotFound/NotFound';
 import Auth from './Components/Auth/Auth';
+import RegistationForm from './Components/RegistationForm/RegistationForm';
 
 export const myHost='http://localhost:3001'
 export const UserContext = createContext()
@@ -20,6 +21,10 @@ function App() {
 
         <Route exact path='/auth'>
           <Auth></Auth>
+        </Route>
+
+        <Route exact path='/registation-form'>
+          <RegistationForm></RegistationForm>
         </Route>
 
         <Route path='*'>
