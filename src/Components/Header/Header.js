@@ -12,12 +12,20 @@ const Header = () => {
                     <img style={{height:'60px'}} src={logo} alt="volunteer network logo"/>
                 </Grid>
                 <Grid container item xs={5} justify='space-around'>
-                    <Link className='link' to='/'><b>Home</b></Link>
-                    <Link className='link' to='/'><b>Donation</b></Link>
-                    <Link className='link' to='/'><b>Events</b></Link>
-                    <Link className='link' to='/'><b>Blog</b></Link>
-                    <Button variant="contained" style={{background:'#3F90FC', color:'white'}}>Register</Button>
-                    <Button variant="contained" style={{background:'#434141', color:'white'}}>Admin</Button>
+                    <Link to='/' className='link'><b>Home</b></Link>
+                    <Link to='/donation' className='link'><b>Donation</b></Link>
+                    <Link to='/events' className='link'><b>Events</b></Link>
+                    <Link to='/blog' className='link'><b>Blog</b></Link>
+                    <Link to='/auth' className='link'>
+                        <Button  variant="contained" style={{background:'#3F90FC', color:'white'}}>
+                            Register
+                        </Button>
+                    </Link>
+                    <Link to='/admin-panel' className='link'>
+                        <Button variant="contained" style={{background:'#434141', color:'white'}}>
+                            Admin
+                        </Button>
+                    </Link>
                 </Grid>
             </Grid>
         </div>

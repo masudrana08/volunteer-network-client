@@ -10,11 +10,14 @@ const Home = () => {
                  url(${background}) `, height:'496px'}}>
 
                 <Header></Header>
-                <div style={{textAlign:'center', padding:'20px 0'}}>
+                <div style={{textAlign:'center', padding:'30px 0'}}>
                     <h2>I GROW BY HELPING PEOPLE IN NEED</h2>
-                    <input className='input' type="text" placeholder="Search"/>
-                    <button style={{borderTopRightRadius: '5px',borderBottomRightRadius: '5px'}} 
-                        className='blue-button' type="submit">Search</button>
+                    
+                        <input style={{borderTopLeftRadius: '5px',borderBottomLeftRadius: '5px'}}
+                            className='input' type="text" placeholder="Search"/>
+                        <button style={{borderTopRightRadius: '5px',borderBottomRightRadius: '5px'}} 
+                            className='blue-button' type="submit">Search</button>
+                    
                 </div>
                 
                 {/* start mapping for load data */}

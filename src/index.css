@@ -25,6 +25,7 @@ code {
   outline:none;
   border:none;
   height:30px;
+  cursor:pointer
 }
 .input{
   padding:0 30px;
