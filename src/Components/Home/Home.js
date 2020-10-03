@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import background from '../../images/backgroud.jpg'
-import {myHost} from '../../App'
 import { Grid } from '@material-ui/core';
 import EventCard from '../EventCard/EventCard'
 const Home = () => {
 
     const [volunteers, setVolunteers]=useState([])
     useEffect(()=>{
-        fetch(myHost+'/show-volunteers')
+        fetch('http://localhost:3001/show-volunteers')
         .then(res=>res.json())
         .then(result=>{
             setVolunteers(result)
@@ -38,8 +37,8 @@ const Home = () => {
                             let colors=['#3F90FC','#FFBD3E','#FF7044', '#cc6fb5e0'];
                             const random = Math.floor(Math.random()*4)
                             return(
-                                <Grid item xs={12} sm={6} md={3} >
-                                    <EventCard event={event} myColor={colors[random]}></EventCard>
+                                <Grid item xs={12} sm={6} md={3} key={event._id}>
+                                    <EventCard event={event} myColor={colors[random]} ></EventCard>
                                 </Grid>
                             )
                         })

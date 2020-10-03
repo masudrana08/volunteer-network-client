@@ -5,11 +5,12 @@ import Home from './Components/Home/Home';
 import NotFound from './Components/NotFound/NotFound';
 import Auth from './Components/Auth/Auth';
 import RegistationForm from './Components/RegistationForm/RegistationForm';
-
-export const myHost='http://localhost:3001'
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Events from './Components/Events/Events';
 export const UserContext = createContext()
 function App() {
   const [user,setUser]=useState({isSignedUp:true})
+
   return (
     <UserContext.Provider value={[user,setUser]}>
       <Router>
@@ -25,6 +26,10 @@ function App() {
 
         <Route exact path='/registation-form'>
           <RegistationForm></RegistationForm>
+        </Route>
+
+        <Route exact path='/events'>
+          <Events></Events>
         </Route>
 
         <Route path='*'>

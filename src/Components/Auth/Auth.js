@@ -13,6 +13,7 @@ export default function Auth() {
   const [user,setUser]=useContext(UserContext)
   const history=useHistory()
 
+  //sign in with google provider
   const googleSigninHandler = () =>{
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider)
@@ -24,6 +25,7 @@ export default function Auth() {
     .catch(error=>console.log(error))
   }
 
+// sign up with email and password
   const emailPassSignupHandler=()=>{
     firebase.auth().createUserWithEmailAndPassword(`${user.inputEmail}`, `${user.inputPassword}`)
     .then(result => {
@@ -32,6 +34,7 @@ export default function Auth() {
     .catch(error=>console.log(error))
   }
 
+  // sign in with email and password
   const emailPassSigninHandler = ()=>{
     firebase.auth().signInWithEmailAndPassword(`${user.inputEmail}`, `${user.inputPassword}`)
     .then(result=>{
@@ -41,6 +44,11 @@ export default function Auth() {
       })
     .catch(error=>console.log(error))
   }
+
+// token verify
+
+
+
 
   return (
    <>
