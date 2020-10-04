@@ -25,17 +25,17 @@ function App() {
           <Auth></Auth>
         </Route>
 
-        <Route exact path='/registation-form'>
+        <PrivateRoute exact path='/registation-form'>
           <RegistationForm></RegistationForm>
-        </Route>
+        </PrivateRoute>
 
-        <Route exact path='/events'>
+        <PrivateRoute exact path='/events'>
           <Events></Events>
-        </Route>
+        </PrivateRoute>
 
-        <Route exact path='/admin-panel'>
+        <PrivateRoute exact path='/admin-panel'>
           <AdminPanel></AdminPanel>
-        </Route>
+        </PrivateRoute>
 
         <Route path='*'>
           <NotFound></NotFound>

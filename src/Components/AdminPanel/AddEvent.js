@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import {useHistory} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import './AddEvent.css'
 import upload from '../../images/upload.png'
 const AddEvent = () => {
+    const [myEvent, setMyEvent]=useState({date:new Date().toDateString(),img:'https://i.ibb.co/6t45C5k/school-Suffiles.png'})
+    const history=useHistory()
+    
+    const addEventHandler=()=>{
+        fetch('http://localhost:3001/add-event',{
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify(myEvent)
+        })
+        .then(res=>res.json())
+        .then(result=>{
+            if(result){
+                console.log(result)
+                history.push('/')
+            }
+        })
+    }
     return (
         <>
         <Grid  item xs={9} style={{marginTop:'15px'}}>
@@ -12,18 +30,19 @@ const AddEvent = () => {
                 <Grid item md={6} >
                     <div>
                         <b>Event title</b><br/>
-                        <input placeholder='Enter title' className='event-input' id='title' type="text"/>
+                        <input onBlur={(event)=>setMyEvent({...myEvent,name:event.target.value})} placeholder='Enter title' className='event-input' id='title' type="text"/>
                     </div>
                     <div>
                         <b>Description</b><br/>
-                        <textarea className='event-textarea' placeholder='Enter description' name="description" id="description" 
+                        <textarea onBlur={(event)=>setMyEvent({...myEvent,description:event.target.value})} className='event-textarea' placeholder='Enter description' name="description" id="description" 
                         cols="40" rows="7"></textarea>
                     </div>
                 </Grid>
                 <Grid item md={6} >
                     <div>
                         <b>Event date</b><br/>
-                        <input placeholder='Event date' className='event-input' id='date' type="calendar"/>
+                        <input onBlur={(event)=>setMyEvent({...myEvent,date:event.target.value})}
+                         placeholder='Event date' className='event-input' id='date' type="calendar" value={new Date().toDateString()}/>
                     </div>
                     <div>
                         <b>Banner</b><br/>
@@ -36,7 +55,7 @@ const AddEvent = () => {
                     </div>
                 </Grid>
             </Grid>
-            <button style={{float:'right', height:'40px',marginTop:'40px', padding:'10px 40px', borderRadius:'5px'}} 
+            <button onClick={addEventHandler} style={{float:'right', height:'40px',marginTop:'40px', padding:'10px 40px', borderRadius:'5px'}} 
                 className='blue-button'>
                     <b>Submit</b>
             </button>
