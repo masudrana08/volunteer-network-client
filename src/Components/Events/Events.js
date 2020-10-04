@@ -11,7 +11,7 @@ const Events = () => {
             method:'GET', 
             headers:{
                 'Content-Type':'application/json',
-                email:'rana028511@gmail.com' //user.email
+                email: user.email
             }
         })
         .then(res=>res.json())
@@ -21,7 +21,21 @@ const Events = () => {
     })
 
     const calcelEventHandler=(id)=>{
-        console.log(id)
+        fetch('http://localhost:3001/cancel-event',{
+            method:'DELETE',
+            headers:{
+                'Content-Type':'application/json',
+                id:id
+            }
+        })
+        .then(res=>res.json())
+        .then(result=>{
+            if(result){
+                const existingEvents=events.filter(data=>data._id !== id)
+                console.log(existingEvents)
+                setEvents(existingEvents)
+            }
+        })
     }
     return (
         <>
@@ -43,7 +57,9 @@ const Events = () => {
                                     <h3>{event.eventName}</h3>
                                     <h4>{event.date}</h4>
                                     <div style={{textAlign:'right'}}>
-                                    <button onClick={()=>calcelEventHandler(event._id)} className='event-cancel'>cancel</button>
+                                    <button onClick={()=>calcelEventHandler(event._id)}  className='event-cancel'>
+                                        cancel
+                                    </button>
                                     </div>
                                 </div>
                             </div>

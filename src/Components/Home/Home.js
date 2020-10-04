@@ -10,6 +10,7 @@ const Home = () => {
         fetch('http://localhost:3001/show-volunteers')
         .then(res=>res.json())
         .then(result=>{
+            
             setVolunteers(result)
         })
     },[])

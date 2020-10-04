@@ -10,8 +10,8 @@ import { useState } from 'react';
 const RegistationForm = () => {
     const history=useHistory()
     const [user]=useContext(UserContext)
-    const [form, setForm]=useState({date:new Date().toDateString(), email:user.email, img:user.event?.img})
-
+    const [form, setForm]=useState({eventName:user.event?.name,date:new Date().toDateString(), email:user.email, img:user.event?.img})
+    console.log(form)
     const submitFormHandler=(event)=>{
         event.preventDefault()
         fetch('http://localhost:3001/submit-form',{
