@@ -7,6 +7,7 @@ import Auth from './Components/Auth/Auth';
 import RegistationForm from './Components/RegistationForm/RegistationForm';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Events from './Components/Events/Events';
+import AdminPanel from './Components/AdminPanel/AdminPanel';
 export const UserContext = createContext()
 function App() {
   const [user,setUser]=useState({isSignedUp:true})
@@ -30,6 +31,10 @@ function App() {
 
         <Route exact path='/events'>
           <Events></Events>
+        </Route>
+
+        <Route exact path='/admin-panel'>
+          <AdminPanel></AdminPanel>
         </Route>
 
         <Route path='*'>
