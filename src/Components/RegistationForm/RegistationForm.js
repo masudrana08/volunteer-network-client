@@ -13,7 +13,7 @@ const RegistationForm = () => {
     const [form, setForm]=useState({eventName:user.event?.name,date:new Date().toDateString(), email:user.email, img:user.event?.img})
     const submitFormHandler=(event)=>{
         event.preventDefault()
-        fetch('http://localhost:3001/submit-form',{
+        fetch('https://volunteer-network-serve.herokuapp.com/submit-form',{
             method:'POST', 
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(form)

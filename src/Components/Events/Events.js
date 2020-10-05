@@ -7,7 +7,7 @@ const Events = () => {
     const [user]=useContext(UserContext)
     const [events, setEvents]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:3001/my-events',{
+        fetch('https://volunteer-network-serve.herokuapp.com/my-events',{
             method:'GET', 
             headers:{
                 'Content-Type':'application/json',
@@ -21,7 +21,7 @@ const Events = () => {
     })
 
     const calcelEventHandler=(id)=>{
-        fetch('http://localhost:3001/cancel-event',{
+        fetch('https://volunteer-network-serve.herokuapp.com/cancel-event',{
             method:'DELETE',
             headers:{
                 'Content-Type':'application/json',

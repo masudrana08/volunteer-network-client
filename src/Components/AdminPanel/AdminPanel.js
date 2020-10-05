@@ -48,14 +48,14 @@ const AdminPanel = () => {
     
     useEffect(()=>{
         
-            fetch('http://localhost:3001/all-registered-events')
+            fetch('https://volunteer-network-serve.herokuapp.com/all-registered-events')
             .then(res=>res.json())
             .then(result=>setAllEvents(result))
        
     },[])
 
     const eventDeleteHandler=(id)=>{
-        fetch('http://localhost:3001/cancel-event',{
+        fetch('https://volunteer-network-serve.herokuapp.com/cancel-event',{
             method:'DELETE',
             headers:{
                 'Content-Type':'application/json',

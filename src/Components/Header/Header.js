@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Grid from '@material-ui/core/Grid';
 import logo from '../../images/logo.png'
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 const Header = () => {
+    const [user]=useContext(UserContext)
     return (
         <div>
             <Grid container item xs={12} style={{height:'60px', padding:'10px 20px'}} alignItems='center' >
@@ -16,11 +18,14 @@ const Header = () => {
                     <Link to='/donation' className='link'><b>Donation</b></Link>
                     <Link to='/events' className='link'><b>Events</b></Link>
                     <Link to='/blog' className='link'><b>Blog</b></Link>
-                    <Link to='/auth' className='link'>
+                    {
+                        user.isSignedIn ? <b style={{color:'#3F90FC'}}>Hello, {user.name || 'User'} </b>
+                        :<Link to='/auth' className='link'>
                         <Button  variant="contained" style={{background:'#3F90FC', color:'white'}}>
                             Register
                         </Button>
                     </Link>
+                    }
                     <Link to='/admin-panel' className='link'>
                         <Button variant="contained" style={{background:'#434141', color:'white'}}>
                             Admin
