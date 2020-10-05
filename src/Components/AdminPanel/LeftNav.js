@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
 import AddIcon from '@material-ui/icons/Add';
 import logo from '../../images/logo.png'
@@ -24,7 +24,8 @@ const LeftNav = () => {
         <Grid container item xs={12} alignItems='center'>
         <Grid item >
         <button className='nav-button' autoFocus>
-        <div onClick={()=>setUser({...user,clicked:'volunteerList'})} style={{display:'flex',cursor:'pointer', margin:'15px 0px', alignItems:'center'}}>
+        <div onClick={()=>setUser({...user,clicked:'volunteerList'})} 
+        style={{display:'flex',cursor:'pointer', margin:'15px 0px', alignItems:'center'}}>
             <div>
                 <PeopleOutlineIcon></PeopleOutlineIcon>
             </div>
@@ -37,7 +38,8 @@ const LeftNav = () => {
 
         <Grid item >
         <button className='nav-button'>
-        <div onClick={()=>setUser({...user,clicked:'addEvent'})} style={{display:'flex', cursor:'pointer',alignItems:'center' }}>
+        <div onClick={()=>setUser({...user,clicked:'addEvent'})} 
+        style={{display:'flex', cursor:'pointer',alignItems:'center' }}>
             <div>
                 <AddIcon></AddIcon>
             </div>

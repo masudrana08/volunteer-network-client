@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import firebase from 'firebase'
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -105,7 +104,8 @@ const AdminPanel = () => {
                         <StyledTableCell align="left">{event.date}</StyledTableCell>
                         <StyledTableCell align="left">{event.eventName}</StyledTableCell>
                         <StyledTableCell align="left">
-                            <DeleteForeverIcon onClick={()=>eventDeleteHandler(event._id)} justify='center' style={{cursor:'pointer', color:'#f35d5d'}}>
+                            <DeleteForeverIcon onClick={()=>eventDeleteHandler(event._id)} 
+                            justify='center' style={{cursor:'pointer', color:'#f35d5d'}}>
 
                             </DeleteForeverIcon>
                         </StyledTableCell>

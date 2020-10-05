@@ -32,7 +32,6 @@ const Events = () => {
         .then(result=>{
             if(result){
                 const existingEvents=events.filter(data=>data._id !== id)
-                console.log(existingEvents)
                 setEvents(existingEvents)
             }
         })
@@ -40,16 +39,13 @@ const Events = () => {
     return (
         <>
         <Header></Header>
-       
-            
-            
-            <Grid  container item xs={11} justify='center'  spacing='5' style={{margin:'auto'}}>
+  
+            <Grid container item xs={11} justify='center'  spacing='5' style={{margin:'auto'}}>
                 {
                     events.map(event=>{
                        return(
-                        
-                       
-                            <Grid container item xs={10} sm={5} justify='space-around' style={{boxShadow:'0px 2px 5px lightGray', borderRadius:'10px', width:'100%',margin:'10px'}}>
+                            <Grid key={event._id} container item xs={10} sm={5} justify='space-around' 
+                            style={{boxShadow:'0px 2px 5px lightGray', borderRadius:'10px', width:'100%',margin:'10px'}}>
                                 <Grid item xs={10} md={5} style={{width:'50%'}}>
                                     <img style={{width:'100%', height:'180px'}} src={event.img} alt=""/>
                                 </Grid>
@@ -63,8 +59,6 @@ const Events = () => {
                                     </div>
                                 </Grid>
                             </Grid>
-                        
-                        
                        )
                     })
                 }

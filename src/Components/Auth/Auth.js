@@ -90,10 +90,10 @@ export default function Auth() {
             </span>
             </div>
           : <div style={{textAlign:'center', marginTop:'10px'}}>
-            Already have an account? 
+              Already have an account? 
             <span onClick={()=>setUser({...user,isSignedUp:true})} 
               style={{color:'#3F90FC', marginLeft:'10px',fontWeight:'400', cursor:'pointer'}}>
-              Signin
+                Signin
             </span>
             </div>
         }

@@ -16,7 +16,6 @@ const AddEvent = () => {
         .then(res=>res.json())
         .then(result=>{
             if(result){
-                console.log(result)
                 history.push('/')
             }
         })
@@ -30,28 +29,33 @@ const AddEvent = () => {
                 <Grid item xs={12} sm={6}>
                     <div>
                         <b>Event title</b><br/>
-                        <input onBlur={(event)=>setMyEvent({...myEvent,name:event.target.value})} placeholder='Enter title' className='event-input' id='title' type="text"/>
+                        <input onBlur={(event)=>setMyEvent({...myEvent,name:event.target.value})} 
+                            placeholder='Enter title' className='event-input' id='title' type="text"/>
                     </div>
                     <div>
                         <b>Description</b><br/>
-                        <textarea onBlur={(event)=>setMyEvent({...myEvent,description:event.target.value})} className='event-textarea' placeholder='Enter description' name="description" id="description" 
+                        <textarea onBlur={(event)=>setMyEvent({...myEvent,description:event.target.value})}
+                        className='event-textarea' placeholder='Enter description' name="description" id="description" 
                          rows="7"></textarea>
                     </div>
                 </Grid>
                 <Grid item xs={12} sm={6} >
                     <div>
                         <b>Event date</b><br/>
-                        <input type='date' onBlur={(event)=>setMyEvent({...myEvent,date:new Date(event.target.value).toDateString()})}
-                          className='event-input' id='date'  />
+                        <input type='date' className='event-input' id='date'
+                        onBlur={(event)=>setMyEvent({...myEvent,date:new Date(event.target.value).toDateString()})}
+                            />
                     </div>
                     <div>
                         <b>Add Image</b><br/>
-                        <input placeholder='Paste your image link' type='text' onBlur={(event)=>setMyEvent({...myEvent,img:event.target.value})}
-                          className='event-input' id='date'  />
+                        <input placeholder='Paste your image link' type='text' className='event-input' id='date' 
+                        onBlur={(event)=>setMyEvent({...myEvent,img:event.target.value})}
+                           />
                     </div>
                     <div>
                         <b>Banner</b><br/>
-                            <div className='file-upload' style={{background:`url(${upload}) no-repeat`, backgroundSize:'30px 30px'}}>
+                            <div className='file-upload' 
+                                style={{background:`url(${upload}) no-repeat`, backgroundSize:'30px 30px'}}>
                                 <input type="file"/>
                                 <b style={{color:'#0084FF', margin:'0'}}>Upload image</b>
                             </div>
