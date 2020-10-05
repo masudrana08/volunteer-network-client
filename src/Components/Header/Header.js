@@ -17,7 +17,7 @@ const Header = () => {
                     </Link>
                 </Grid>
                 
-                <Grid container item xs={5} justify='space-around'>
+                <Grid container item md={5} justify='space-around'>
                     <Link to='/' className='link'><b>Home</b></Link>
                     <Link to='/donation' className='link'><b>Donation</b></Link>
                     <Link to='/events' className='link'><b>Events</b></Link>

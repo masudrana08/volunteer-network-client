@@ -41,8 +41,8 @@ const AddEvent = () => {
                 <Grid item md={6} >
                     <div>
                         <b>Event date</b><br/>
-                        <input onBlur={(event)=>setMyEvent({...myEvent,date:event.target.value})}
-                         placeholder='Event date' className='event-input' id='date' type="calendar" value={new Date().toDateString()}/>
+                        <input type='date' onBlur={(event)=>setMyEvent({...myEvent,date:new Date(event.target.value).toDateString()})}
+                          className='event-input' id='date'  />
                     </div>
                     <div>
                         <b>Banner</b><br/>

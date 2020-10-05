@@ -10,7 +10,7 @@ import { useState } from 'react';
 const RegistationForm = () => {
     const history=useHistory()
     const [user]=useContext(UserContext)
-    const [form, setForm]=useState({eventName:user.event?.name,date:new Date().toDateString(), email:user.email, img:user.event?.img})
+    const [form, setForm]=useState({eventName:user.event?.name, name:user.name, email:user.email, img:user.event?.img})
     const submitFormHandler=(event)=>{
         event.preventDefault()
         fetch('https://volunteer-network-serve.herokuapp.com/submit-form',{
@@ -26,6 +26,7 @@ const RegistationForm = () => {
         })
         
     }
+    console.log(form)
     return (
         <div >
             <div  style={{width:"200px", margin:'auto', padding:'20px'}}>
@@ -38,23 +39,27 @@ const RegistationForm = () => {
                 
                     <FormControl style={{marginBottom:'10px'}}>
                         <InputLabel htmlFor="name">Full Name</InputLabel>
-                        <Input onBlur={(event)=>setForm({...form,name:event.target.value})} name='name' style={{color:'#3d3b3b'}} id="name" aria-describedby="my-helper-text" value={user.name || ''}/>
+                        <Input onBlur={(event)=>setForm({...form,name:event.target.value})} 
+                        name='name' style={{color:'#3d3b3b'}} id="name" aria-describedby="my-helper-text" value={user.name } required/>
                     </FormControl>
                     <FormControl style={{marginBottom:'10px'}}>
                         <InputLabel htmlFor="email">Email address</InputLabel>
-                        <Input onBlur={(event)=>setForm({...form,email:event.target.value})} name='email' style={{color:'#3d3b3b'}} id="email" aria-describedby="my-helper-text" value={user?.email}/>
+                        <Input onBlur={(event)=>setForm({...form,email:event.target.value})}
+                         name='email' style={{color:'#3d3b3b'}} id="email" aria-describedby="my-helper-text" value={user?.email}/>
                     </FormControl>
                     <FormControl style={{marginBottom:'10px'}}>
-                        <InputLabel htmlFor="date">Date</InputLabel>
-                        <Input onBlur={(event)=>setForm({...form,date:event.target.value})} name='date' style={{color:'#3d3b3b'}} id="date" aria-describedby="my-helper-text" placeholder='dd-mm-yy'/>
+                        <Input onBlur={(event)=>setForm({...form,date:new Date(event.target.value).toDateString()})} type='date'
+                         name='date' style={{color:'#3d3b3b'}} id="date" aria-describedby="my-helper-text" required/>
                     </FormControl>
                     <FormControl style={{marginBottom:'10px'}}>
                         <InputLabel htmlFor="description">Description</InputLabel>
-                        <Input onBlur={(event)=>setForm({...form,description:event.target.value})} style={{color:'#3d3b3b'}} id="description" aria-describedby="my-helper-text" />
+                        <Input onBlur={(event)=>setForm({...form,description:event.target.value})}
+                         style={{color:'#3d3b3b'}} id="description" aria-describedby="my-helper-text" />
                     </FormControl>
                     <FormControl style={{marginBottom:'10px'}}>
                     <InputLabel htmlFor="description">Organization Name</InputLabel>
-                        <Input onBlur={(event)=>setForm({...form,eventName:event.target.value})} name='organizationName' style={{color:'#3d3b3b'}} id="organizationName" aria-describedby="my-helper-text" value={user.event?.name} />
+                        <Input onBlur={(event)=>setForm({...form,eventName:event.target.value})}
+                         name='organizationName' style={{color:'#3d3b3b'}} id="organizationName" aria-describedby="my-helper-text" value={user.event?.name} required />
                     </FormControl>
 
                 
