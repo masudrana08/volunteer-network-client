@@ -23,7 +23,7 @@ const Home = () => {
 
                 <Header></Header>
                 <div style={{textAlign:'center', padding:'30px 0'}}>
-                    <h2>I GROW BY HELPING PEOPLE IN NEED</h2>
+                    <h2 style={{margin:'20px'}}>I GROW BY HELPING PEOPLE IN NEED</h2>
                     
                         
                             <input style={{borderTopLeftRadius: '5px',borderBottomLeftRadius: '5px'}}

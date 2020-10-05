@@ -11,7 +11,7 @@ const Events = () => {
             method:'GET', 
             headers:{
                 'Content-Type':'application/json',
-                email: user.email
+                email: 'rana028511@gmail.com'//user.email
             }
         })
         .then(res=>res.json())
@@ -40,37 +40,37 @@ const Events = () => {
     return (
         <>
         <Header></Header>
-        <div style={{width:'70vw', margin:'auto', marginTop:'70px'}}>
+       
             
-            <div>
-            <Grid container item xs={12} spacing='5'>
+            
+            <Grid  container item xs={11} justify='center'  spacing='5' style={{margin:'auto'}}>
                 {
                     events.map(event=>{
                        return(
                         
-                        <Grid item xs={12} md={6} key={event._id} >
-                            <div style={{display:'flex',boxShadow:'0px 2px 5px lightGray', width:'400px',padding:'20px', borderRadius:'10px'}}>
-                                <div>
-                                    <img style={{height:'130px', width:'140px'}} src={event.img} alt=""/>
-                                </div>
-                                <div style={{marginLeft:'10px', width:'100%'}}>
+                       
+                            <Grid container item xs={10} sm={5} justify='space-around' style={{boxShadow:'0px 2px 5px lightGray', borderRadius:'10px', width:'100%',margin:'10px'}}>
+                                <Grid item xs={10} md={5} style={{width:'50%'}}>
+                                    <img style={{width:'100%', height:'180px'}} src={event.img} alt=""/>
+                                </Grid>
+                                <Grid item xs={10} md={5} style={{width:'50%', marginLeft:'15px'}}>
                                     <h3>{event.eventName}</h3>
                                     <h4>{event.date}</h4>
-                                    <div style={{textAlign:'right'}}>
+                                    <div style={{textAlign:'right', marginTop:'30px'}}>
                                     <button onClick={()=>calcelEventHandler(event._id)}  className='event-cancel'>
                                         cancel
                                     </button>
                                     </div>
-                                </div>
-                            </div>
-                        </Grid>
+                                </Grid>
+                            </Grid>
+                        
                         
                        )
                     })
                 }
             </Grid>
-            </div>
-        </div>
+            
+       
         </>
     );
 };
