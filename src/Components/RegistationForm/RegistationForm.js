@@ -38,7 +38,7 @@ const RegistationForm = () => {
                 
                     <FormControl style={{marginBottom:'10px'}}>
                         <InputLabel htmlFor="name">Full Name</InputLabel>
-                        <Input onBlur={(event)=>setForm({...form,name:event.target.value})} name='name' style={{color:'#3d3b3b'}} id="name" aria-describedby="my-helper-text" />
+                        <Input onBlur={(event)=>setForm({...form,name:event.target.value})} name='name' style={{color:'#3d3b3b'}} id="name" aria-describedby="my-helper-text" value={user.name || ''}/>
                     </FormControl>
                     <FormControl style={{marginBottom:'10px'}}>
                         <InputLabel htmlFor="email">Email address</InputLabel>
@@ -46,7 +46,7 @@ const RegistationForm = () => {
                     </FormControl>
                     <FormControl style={{marginBottom:'10px'}}>
                         <InputLabel htmlFor="date">Date</InputLabel>
-                        <Input onBlur={(event)=>setForm({...form,date:event.target.value})} name='date' style={{color:'#3d3b3b'}} id="date" aria-describedby="my-helper-text" value={new Date().toDateString()}/>
+                        <Input onBlur={(event)=>setForm({...form,date:event.target.value})} name='date' style={{color:'#3d3b3b'}} id="date" aria-describedby="my-helper-text" placeholder='dd-mm-yy'/>
                     </FormControl>
                     <FormControl style={{marginBottom:'10px'}}>
                         <InputLabel htmlFor="description">Description</InputLabel>

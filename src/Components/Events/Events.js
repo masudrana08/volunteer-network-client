@@ -48,8 +48,8 @@ const Events = () => {
                     events.map(event=>{
                        return(
                         
-                        <Grid item xs={12} md={6} key={event._id}>
-                            <div style={{display:'flex',boxShadow:'0px 2px 5px lightGray', width:'400px',padding:'20px' }}>
+                        <Grid item xs={12} md={6} key={event._id} >
+                            <div style={{display:'flex',boxShadow:'0px 2px 5px lightGray', width:'400px',padding:'20px', borderRadius:'10px'}}>
                                 <div>
                                     <img style={{height:'130px', width:'140px'}} src={event.img} alt=""/>
                                 </div>

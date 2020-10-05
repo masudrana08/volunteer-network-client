@@ -10,9 +10,13 @@ const Header = () => {
     return (
         <div>
             <Grid container item xs={12} style={{height:'60px', padding:'10px 20px'}} alignItems='center' >
+                
                 <Grid item xs={7}>
-                    <img style={{height:'60px'}} src={logo} alt="volunteer network logo"/>
+                    <Link className='link' to='/'>
+                        <img style={{height:'60px'}} src={logo} alt="volunteer network logo"/>
+                    </Link>
                 </Grid>
+                
                 <Grid container item xs={5} justify='space-around'>
                     <Link to='/' className='link'><b>Home</b></Link>
                     <Link to='/donation' className='link'><b>Donation</b></Link>

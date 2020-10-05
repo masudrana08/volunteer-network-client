@@ -27,10 +27,11 @@ export default function EventCard(props) {
     setUser({...user,event:props.event})
     history.push('/registation-form')
   }
+
   return (
-    <Card onClick={eventHandler} className={classes.root} style={{background:props.myColor}}>
+    <Card  className={classes.root} style={{background:props.myColor, borderRadius:'10px'}}>
       <CardActionArea >
-        <CardMedia
+        <CardMedia onClick={eventHandler}
           component="img"
           alt="Contemplative Reptile"
           height='200'
