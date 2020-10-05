@@ -29,9 +29,9 @@ function App() {
           <RegistationForm></RegistationForm>
         </PrivateRoute>
 
-        <Route exact path='/events'>
+        <PrivateRoute exact path='/events'>
           <Events></Events>
-        </Route>
+        </PrivateRoute>
 
         <PrivateRoute exact path='/admin-panel'>
           <AdminPanel></AdminPanel>

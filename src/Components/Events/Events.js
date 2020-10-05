@@ -11,7 +11,7 @@ const Events = () => {
             method:'GET', 
             headers:{
                 'Content-Type':'application/json',
-                email: 'rana028511@gmail.com'//user.email
+                email: user.email
             }
         })
         .then(res=>res.json())

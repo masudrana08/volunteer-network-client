@@ -27,7 +27,7 @@ const Header = () => {
                     
                     
                     {
-                        user.isSignedIn ? <Grid item xs={12} md={2}><b style={{color:'#3F90FC'}}>Hello, {user.name || 'User'} </b></Grid>
+                        user.isSignedIn ? <Grid item xs={12} md={2}><b style={{color:'#3F90FC'}}>{user.name || 'User'} </b></Grid>
                         
                         : <Grid item xs={12} md={2} >
                             <Link to='/auth' className='link'>
