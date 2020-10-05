@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import './AddEvent.css'
 import upload from '../../images/upload.png'
 const AddEvent = () => {
-    const [myEvent, setMyEvent]=useState({date:new Date().toDateString(),img:'https://i.ibb.co/6t45C5k/school-Suffiles.png'})
+    const [myEvent, setMyEvent]=useState({date:new Date().toDateString(),img:'https://imgur.com/XDR2o8k.png'})
     const history=useHistory()
     
     const addEventHandler=()=>{
@@ -42,6 +42,11 @@ const AddEvent = () => {
                     <div>
                         <b>Event date</b><br/>
                         <input type='date' onBlur={(event)=>setMyEvent({...myEvent,date:new Date(event.target.value).toDateString()})}
+                          className='event-input' id='date'  />
+                    </div>
+                    <div>
+                        <b>Add Image</b><br/>
+                        <input placeholder='Paste your image link' type='text' onBlur={(event)=>setMyEvent({...myEvent,img:event.target.value})}
                           className='event-input' id='date'  />
                     </div>
                     <div>
