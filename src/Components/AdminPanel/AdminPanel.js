@@ -73,15 +73,16 @@ const AdminPanel = () => {
     }
     return (
         <Grid container item xs={12}>
-            <Grid item md={2} >
+            <Grid item md={2} xs={12}>
                 <LeftNav></LeftNav>
             </Grid>
 
             {
                 user.clicked == 'volunteerList' &&
-                <Grid item md={9}  style={{marginLeft:'20px', marginTop:'10px'}}>
+                <Grid item md={9} xs={12} style={{marginLeft:'20px', marginTop:'10px'}}>
                 <h3 style={{textAlign:'left', marginLeft:'10px', color:'#0C0C0C'}}>Volunteer register list</h3>
-                <TableContainer component={Paper} style={{marginTop:'30px',boxShadow:'0 2px 5px lightgray', padding:'30px', borderRadius:'10px'}}>
+                <TableContainer component={Paper} style={{marginTop:'30px',
+                    boxShadow:'0 2px 5px lightgray', padding:'30px', borderRadius:'10px'}}>
                 <Table className={classes.table} aria-label="customized table" >
                     <TableHead>
                     <TableRow>

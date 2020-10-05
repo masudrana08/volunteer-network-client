@@ -25,10 +25,12 @@ const Home = () => {
                 <div style={{textAlign:'center', padding:'30px 0'}}>
                     <h2>I GROW BY HELPING PEOPLE IN NEED</h2>
                     
-                        <input style={{borderTopLeftRadius: '5px',borderBottomLeftRadius: '5px'}}
-                            className='input' type="text" placeholder="Search"/>
-                        <button style={{borderTopRightRadius: '5px',borderBottomRightRadius: '5px'}} 
-                            className='blue-button' type="submit">Search</button>
+                        
+                            <input style={{borderTopLeftRadius: '5px',borderBottomLeftRadius: '5px'}}
+                                className='input' type="text" placeholder="Search"/>
+                            <button style={{borderTopRightRadius: '5px',borderBottomRightRadius: '5px'}} 
+                                className='blue-button' type="submit">Search</button>
+                        
                     
                 </div>
                 <div className='container' style={{marginTop:'70px'}}>
@@ -38,7 +40,8 @@ const Home = () => {
                             let colors=['#3F90FC','#FFBD3E','#FF7044', '#cc6fb5e0'];
                             const random = Math.floor(Math.random()*4)
                             return(
-                                <Grid item xs={12} sm={6} md={3} key={event._id}>
+
+                                <Grid item xs={12} sm={6} md={4} lg={3} key={event._id}>
                                     <EventCard event={event} myColor={colors[random]} ></EventCard>
                                 </Grid>
                             )

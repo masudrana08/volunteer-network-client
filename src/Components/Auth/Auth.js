@@ -52,7 +52,7 @@ export default function Auth() {
 
   return (
    <>
-     <FormGroup style={{width:"400px",border:'1px solid lightgray',
+     <FormGroup style={{width:"300px",border:'1px solid lightgray',
       padding:'30px', borderRadius:'10px',  margin:'auto', marginTop:'20vh'}}>
         {
           user.isSignedUp ? <b style={{textAlign:'center'}}>Login</b>

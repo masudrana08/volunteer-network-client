@@ -4,7 +4,7 @@ import logo from '../../images/logo.png'
 import { useContext } from 'react';
 import { UserContext } from '../../App';
 import './RegistationForm.css'
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useState } from 'react';
 
 const RegistationForm = () => {
@@ -30,10 +30,12 @@ const RegistationForm = () => {
     return (
         <div >
             <div  style={{width:"200px", margin:'auto', padding:'20px'}}>
+                <Link to='/'>
                 <img style={{height:'50px'}} src={logo} alt=""/>
+                </Link>
             </div>
             <form onSubmit={submitFormHandler} >
-            <FormGroup style={{width:'370px', margin:'auto',padding:'30px',
+            <FormGroup style={{width:'300px', margin:'auto',padding:'30px',
                     border:'1px solid lightgray', borderRadius:'5px'}}>
                 <h3 style={{marginTop:'0'}}>Register as a Volunteer</h3>
                 

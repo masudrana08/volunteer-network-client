@@ -23,11 +23,11 @@ const AddEvent = () => {
     }
     return (
         <>
-        <Grid  item xs={9} style={{marginTop:'15px'}}>
+        <Grid  item xs={12} md={9} style={{marginTop:'15px'}} >
             <h3 style={{marginLeft:'20px', color:'#0C0C0C'}}>Add Event</h3>
-            <Grid  justify='space-around' container item md={12} spacing='7'   
-                style={{ marginLeft:'20px',marginTop:'25px' , boxShadow:'0 2px 5px lightgray',borderRadius:'10px', padding:'20px'}}>
-                <Grid item md={6} >
+            <Grid  container item xs={12}    
+                style={{ padding:'20px',marginTop:'25px' , boxShadow:'0 2px 5px lightgray',borderRadius:'10px'}}>
+                <Grid item xs={12} sm={6}>
                     <div>
                         <b>Event title</b><br/>
                         <input onBlur={(event)=>setMyEvent({...myEvent,name:event.target.value})} placeholder='Enter title' className='event-input' id='title' type="text"/>
@@ -35,10 +35,10 @@ const AddEvent = () => {
                     <div>
                         <b>Description</b><br/>
                         <textarea onBlur={(event)=>setMyEvent({...myEvent,description:event.target.value})} className='event-textarea' placeholder='Enter description' name="description" id="description" 
-                        cols="40" rows="7"></textarea>
+                         rows="7"></textarea>
                     </div>
                 </Grid>
-                <Grid item md={6} >
+                <Grid item xs={12} sm={6} >
                     <div>
                         <b>Event date</b><br/>
                         <input type='date' onBlur={(event)=>setMyEvent({...myEvent,date:new Date(event.target.value).toDateString()})}
@@ -60,7 +60,8 @@ const AddEvent = () => {
                     </div>
                 </Grid>
             </Grid>
-            <button onClick={addEventHandler} style={{float:'right', height:'40px',marginTop:'40px', padding:'10px 40px', borderRadius:'5px'}} 
+            <button onClick={addEventHandler} 
+                style={{float:'right', height:'40px',margin:'20px', padding:'10px 40px', borderRadius:'5px'}} 
                 className='blue-button'>
                     <b>Submit</b>
             </button>

@@ -11,10 +11,10 @@ import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../App';
 
 const useStyles = makeStyles({
-  root: {
-    width: 250,
-    height:270,
-  },
+  // root: {
+  //   width: 250,
+  //   height:270,
+  // },
 });
 
 export default function EventCard(props) {
