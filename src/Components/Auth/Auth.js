@@ -10,6 +10,7 @@ firebase.initializeApp(firebaseConfig);
 
 
 export default function Auth() {
+  {document.title='Volunteer Network | Authentication'}
   const [user,setUser]=useContext(UserContext)
   const history=useHistory()
 

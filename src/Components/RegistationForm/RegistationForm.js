@@ -8,6 +8,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { useState } from 'react';
 
 const RegistationForm = () => {
+    {document.title='Volunteer Network | Volunteer Registation'}
     const history=useHistory()
     const [user]=useContext(UserContext)
     const [form, setForm]=useState({eventName:user.event?.name, name:user.name, email:user.email, img:user.event?.img})

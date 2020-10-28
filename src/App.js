@@ -24,7 +24,7 @@ function App() {
         <Route exact path='/auth'>
           <Auth></Auth>
         </Route>
-
+        
         <PrivateRoute exact path='/registation-form'>
           <RegistationForm></RegistationForm>
         </PrivateRoute>

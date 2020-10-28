@@ -12,6 +12,7 @@ import LeftNav from './LeftNav';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import { UserContext } from '../../App';
 import AddEvent from './AddEvent';
+import Progress from '../Progress/Progress';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -44,7 +45,7 @@ const AdminPanel = () => {
     const classes=useStyles();
     const [allEvents, setAllEvents] = useState([])
     
-    
+    {document.title='Volunteer Network | Admin Panel'}
     useEffect(()=>{
         
             fetch('https://volunteer-network-serve.herokuapp.com/all-registered-events')
@@ -94,6 +95,9 @@ const AdminPanel = () => {
                     </TableRow>
                     </TableHead>
                     <TableBody>
+                    {
+                        allEvents.length <1 && <Progress></Progress>
+                    }
                     {allEvents.map((event)=>{
                         return(
                             <StyledTableRow key={event._id}>

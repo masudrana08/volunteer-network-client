@@ -3,7 +3,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../App';
 import Header from '../Header/Header';
 import './Events.css'
+import loader from '../../images/loader.gif'
 const Events = () => {
+    {document.title='Volunteer Network | Events'}
     const [user]=useContext(UserContext)
     const [events, setEvents]=useState([])
     useEffect(()=>{
@@ -41,6 +43,9 @@ const Events = () => {
         <Header></Header>
   
             <Grid container item xs={11} justify='center'  spacing='5' style={{margin:'auto'}}>
+                {
+                    events.length<1 && <img style={{width:'30%'}} src={loader} alt=""/>
+                }
                 {
                     events.map(event=>{
                        return(

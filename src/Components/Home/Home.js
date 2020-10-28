@@ -3,15 +3,18 @@ import Header from '../Header/Header';
 import background from '../../images/backgroud.jpg'
 import { Grid } from '@material-ui/core';
 import EventCard from '../EventCard/EventCard'
+import loader from '../../images/loader.gif'
 const Home = () => {
 
     const [volunteers, setVolunteers]=useState([])
+    
     useEffect(()=>{
         fetch('https://volunteer-network-serve.herokuapp.com/show-volunteers')
         .then(res=>res.json())
         .then(result=>{
             
             setVolunteers(result)
+
         })
     },[])
 
@@ -36,7 +39,7 @@ const Home = () => {
                 <div className='container' style={{marginTop:'70px'}}>
                     <Grid container item xs={12} spacing='5' justify='center'  style={{ textAlign:'center', margin:'auto'}}>
                     {   
-                        volunteers.map(event=>{
+                       volunteers.length >0 ? volunteers.map(event=>{
                             let colors=['#3F90FC','#FFBD3E','#FF7044', '#cc6fb5e0'];
                             const random = Math.floor(Math.random()*4)
                             return(
@@ -46,6 +49,7 @@ const Home = () => {
                                 </Grid>
                             )
                         })
+                        : <img style={{width:'30%'}} src={loader} alt=""/>
                     }
                     </Grid>
                 </div>
